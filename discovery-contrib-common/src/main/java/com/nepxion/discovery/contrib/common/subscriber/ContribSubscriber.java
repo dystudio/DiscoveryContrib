@@ -89,8 +89,17 @@ public class ContribSubscriber {
                     throw new DiscoveryException("Gray release for [" + key + "] has existed for [" + existedTagKey + "] dimension, [" + tagKey + "] dimension is duplicated");
                 }
             } else {
-                keyMap.put(tagKey, key);
+                keyMap.put(key, tagKey);
             }
+        }
+
+        for (ParameterServiceEntity parameterServiceEntity : parameterServiceEntityList) {
+            Map<String, String> parameterMap = parameterServiceEntity.getParameterMap();
+
+            String tagKey = parameterMap.get(ContribConstant.TAG_KEY);
+            String tagValue = parameterMap.get(ContribConstant.TAG_VALUE);
+            String key = parameterMap.get(ContribConstant.KEY);
+            String value = parameterMap.get(ContribConstant.VALUE);
 
             // <service service-name="discovery-guide-service-a" tag-key="version" tag-value="1.0" key="ShardingSphere" value="db1"/>
             // <service service-name="discovery-guide-service-a" tag-key="version" tag-value="1.1" key="ShardingSphere" value="db2"/>
