@@ -16,7 +16,7 @@ import com.nepxion.discovery.contrib.database.rocketmq.constant.RocketMQContribC
 
 public class RocketMQContribSubscriberStrategy implements ContribSubscriberStrategy {
     @Override
-    public void apply(String key, String value) {
+    public void fireChanged(String key, String value) {
         if (!StringUtils.equals(key, RocketMQContribConstant.ROCKET_MQ)) {
             return;
         }

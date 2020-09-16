@@ -10,5 +10,5 @@ package com.nepxion.discovery.contrib.common.subscriber;
  */
 
 public interface ContribSubscriberStrategy {
-    void apply(String key, String value);
+    void fireChanged(String key, String value);
 }

@@ -107,29 +107,29 @@ public class ContribSubscriber {
             // <service service-name="discovery-guide-service-a" tag-key="region" tag-value="qa" key="RocketMQ" value="queue2"/>            
             if (StringUtils.equals(tagKey, ContribConstant.VERSION)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getVersion())) {
-                    applyStrategy(key, value);
+                    fireChanged(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.REGION)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getRegion())) {
-                    applyStrategy(key, value);
+                    fireChanged(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ENVIRONMENT)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getEnvironment())) {
-                    applyStrategy(key, value);
+                    fireChanged(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ZONE)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getZone())) {
-                    applyStrategy(key, value);
+                    fireChanged(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ADDRESS)) {
                 if (contribMatcher.matchAddress(tagValue)) {
-                    applyStrategy(key, value);
+                    fireChanged(key, value);
                 }
             }
         }
     }
 
-    public void applyStrategy(String key, String value) {
+    public void fireChanged(String key, String value) {
         if (CollectionUtils.isEmpty(contribSubscriberStrategyList)) {
             return;
         }
@@ -144,7 +144,7 @@ public class ContribSubscriber {
         LOG.info("Gray release for {} with {}", key, value);
 
         for (ContribSubscriberStrategy contribSubscriberStrategy : contribSubscriberStrategyList) {
-            contribSubscriberStrategy.apply(key, value);
+            contribSubscriberStrategy.fireChanged(key, value);
         }
     }
 }

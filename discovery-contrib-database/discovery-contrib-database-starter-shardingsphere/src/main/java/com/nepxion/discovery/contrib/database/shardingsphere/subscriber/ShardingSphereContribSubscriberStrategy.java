@@ -16,7 +16,7 @@ import com.nepxion.discovery.contrib.database.shardingsphere.constant.ShardingSp
 
 public class ShardingSphereContribSubscriberStrategy implements ContribSubscriberStrategy {
     @Override
-    public void apply(String key, String value) {
+    public void fireChanged(String key, String value) {
         if (!StringUtils.equals(key, ShardingSphereContribConstant.SHARDING_SPHERE)) {
             return;
         }
