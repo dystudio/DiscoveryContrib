@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.adapter;
+package com.nepxion.discovery.contrib.common.subscriber;
 
 /**
  * <p>Title: Nepxion Discovery</p>

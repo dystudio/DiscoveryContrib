@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.configuration;
+package com.nepxion.discovery.contrib.database.shardingsphere.configuration;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -13,13 +13,13 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriber;
+import com.nepxion.discovery.contrib.database.shardingsphere.subscriber.ShardingSphereContribSubscriberStrategy;
 
 @Configuration
-public class ContribAutoConfiguration {
+public class ShardingSphereContribAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
-    public ContribSubscriber contribSubscriber() {
-        return new ContribSubscriber();
+    public ShardingSphereContribSubscriberStrategy shardingSphereContribSubscriberStrategy() {
+        return new ShardingSphereContribSubscriberStrategy();
     }
 }

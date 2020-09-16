@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.adapter;
+package com.nepxion.discovery.contrib.common.subscriber;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -14,5 +14,5 @@ import java.util.List;
 import com.nepxion.discovery.common.entity.ParameterServiceEntity;
 
 public interface ContribSubscriberStrategy {
-    boolean apply(List<ParameterServiceEntity> parameterServiceEntityList);
+    void apply(List<ParameterServiceEntity> parameterServiceEntityList);
 }
