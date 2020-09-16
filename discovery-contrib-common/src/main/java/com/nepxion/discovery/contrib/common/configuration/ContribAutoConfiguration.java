@@ -13,10 +13,16 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.nepxion.discovery.contrib.common.cache.ContribCache;
 import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriber;
 
 @Configuration
 public class ContribAutoConfiguration {
+    @Bean
+    public ContribCache contribCache() {
+        return new ContribCache();
+    }
+
     @Bean
     @ConditionalOnMissingBean
     public ContribSubscriber contribSubscriber() {
