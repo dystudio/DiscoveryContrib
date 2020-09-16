@@ -15,6 +15,6 @@
     </parent>
 
     <modules>
-        <module>discovery-contrib-database-shardingsphere</module>
+        <module>discovery-contrib-database-starter-shardingsphere</module>
     </modules>
 </project>

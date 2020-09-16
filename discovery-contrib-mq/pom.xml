@@ -15,6 +15,6 @@
     </parent>
 
     <modules>
-        <module>discovery-contrib-mq-rocketmq</module>
+        <module>discovery-contrib-mq-starter-rocketmq</module>
     </modules>
 </project>
