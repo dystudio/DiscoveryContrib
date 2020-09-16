@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.database.rocketmq.processor;
+package com.nepxion.discovery.contrib.mq.rocketmq.processor;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -12,7 +12,7 @@ package com.nepxion.discovery.contrib.database.rocketmq.processor;
 import org.apache.commons.lang3.StringUtils;
 
 import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
-import com.nepxion.discovery.contrib.database.rocketmq.constant.RocketMQContribConstant;
+import com.nepxion.discovery.contrib.mq.rocketmq.constant.RocketMQContribConstant;
 
 public class RocketMQContribProcessor implements ContribProcessor {
     private String destination;

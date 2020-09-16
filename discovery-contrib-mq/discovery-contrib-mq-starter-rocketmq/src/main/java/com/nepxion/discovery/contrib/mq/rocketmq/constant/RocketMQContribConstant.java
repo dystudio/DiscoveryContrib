@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.database.rocketmq.constant;
+package com.nepxion.discovery.contrib.mq.rocketmq.constant;
 
 /**
  * <p>Title: Nepxion Discovery</p>

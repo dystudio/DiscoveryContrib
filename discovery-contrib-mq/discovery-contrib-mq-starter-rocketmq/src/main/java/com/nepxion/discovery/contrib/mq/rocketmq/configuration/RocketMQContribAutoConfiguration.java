@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.database.rocketmq.configuration;
+package com.nepxion.discovery.contrib.mq.rocketmq.configuration;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.nepxion.discovery.contrib.database.rocketmq.processor.RocketMQContribProcessor;
+import com.nepxion.discovery.contrib.mq.rocketmq.processor.RocketMQContribProcessor;
 
 @Configuration
 public class RocketMQContribAutoConfiguration {

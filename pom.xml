@@ -11,7 +11,7 @@
     <url>http://www.nepxion.com</url>
 
     <modules>
-        <module>discovery-contrib-common</module>
+        <module>discovery-contrib-core</module>
         <module>discovery-contrib-database</module>
         <module>discovery-contrib-mq</module>
         <module>discovery-contrib-example</module>
@@ -28,7 +28,7 @@
         <dependencies>
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-common</artifactId>
+                <artifactId>discovery-contrib-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
