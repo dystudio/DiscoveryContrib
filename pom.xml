@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <groupId>com.nepxion</groupId>
+    <artifactId>discovery-contrib</artifactId>
+    <name>Nepxion Discovery Contrib</name>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <version>1.0.0</version>
+    <description>Nepxion Discovery Contrib is 3rd-party contributions that use Nepxion Discovery</description>
+    <url>http://www.nepxion.com</url>
+
+    <modules>
+        <module>discovery-contrib-common</module>
+        <module>discovery-contrib-database</module>
+        <module>discovery-contrib-mq</module>
+    </modules>
+
+    <properties>
+        <discovery.version>6.1.0</discovery.version>
+
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>discovery-contrib-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.nepxion</groupId>
+                <artifactId>discovery</artifactId>
+                <version>${discovery.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <artifactId>discovery-contrib-mq</artifactId>
+    <name>Nepxion Discovery Contrib MQ</name>
+    <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <description>Nepxion Discovery Contrib is 3rd-party contributions that use Nepxion Discovery</description>
+    <url>http://www.nepxion.com</url>
+
+    <parent>
+        <groupId>com.nepxion</groupId>
+        <artifactId>discovery-contrib</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modules>
+        <module>discovery-contrib-mq-rocketmq</module>
+    </modules>
+</project>
