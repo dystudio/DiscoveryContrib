@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.database.shardingsphere.subscriber;
+package com.nepxion.discovery.contrib.database.shardingsphere.processor;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -11,12 +11,12 @@ package com.nepxion.discovery.contrib.database.shardingsphere.subscriber;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriberStrategy;
+import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
 import com.nepxion.discovery.contrib.database.shardingsphere.constant.ShardingSphereContribConstant;
 
-public class ShardingSphereContribSubscriberStrategy implements ContribSubscriberStrategy {
+public class ShardingSphereContribProcessor implements ContribProcessor {
     @Override
-    public void fireChanged(String key, String value) {
+    public void process(String key, String value) {
         if (!StringUtils.equals(key, ShardingSphereContribConstant.SHARDING_SPHERE)) {
             return;
         }

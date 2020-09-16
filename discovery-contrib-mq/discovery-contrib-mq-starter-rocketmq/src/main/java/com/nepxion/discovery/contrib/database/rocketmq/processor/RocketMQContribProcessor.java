@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.database.rocketmq.subscriber;
+package com.nepxion.discovery.contrib.database.rocketmq.processor;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -11,12 +11,12 @@ package com.nepxion.discovery.contrib.database.rocketmq.subscriber;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriberStrategy;
+import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
 import com.nepxion.discovery.contrib.database.rocketmq.constant.RocketMQContribConstant;
 
-public class RocketMQContribSubscriberStrategy implements ContribSubscriberStrategy {
+public class RocketMQContribProcessor implements ContribProcessor {
     @Override
-    public void fireChanged(String key, String value) {
+    public void process(String key, String value) {
         if (!StringUtils.equals(key, RocketMQContribConstant.ROCKET_MQ)) {
             return;
         }

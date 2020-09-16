@@ -26,6 +26,7 @@ import com.nepxion.discovery.common.exception.DiscoveryException;
 import com.nepxion.discovery.contrib.common.cache.ContribCache;
 import com.nepxion.discovery.contrib.common.constant.ContribConstant;
 import com.nepxion.discovery.contrib.common.matcher.ContribMatcher;
+import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
 import com.nepxion.discovery.plugin.framework.adapter.PluginAdapter;
 import com.nepxion.discovery.plugin.framework.event.ParameterChangedEvent;
 import com.nepxion.eventbus.annotation.EventBus;
@@ -44,7 +45,7 @@ public class ContribSubscriber {
     protected ContribCache contribCache;
 
     @Autowired(required = false)
-    protected List<ContribSubscriberStrategy> contribSubscriberStrategyList;
+    protected List<ContribProcessor> contribProcessorList;
 
     @Subscribe
     public void onParameterChanged(ParameterChangedEvent parameterChangedEvent) {
@@ -108,30 +109,30 @@ public class ContribSubscriber {
             // <service service-name="discovery-guide-service-a" tag-key="region" tag-value="qa" key="RocketMQ" value="queue2"/>            
             if (StringUtils.equals(tagKey, ContribConstant.VERSION)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getVersion())) {
-                    fireChanged(key, value);
+                    process(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.REGION)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getRegion())) {
-                    fireChanged(key, value);
+                    process(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ENVIRONMENT)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getEnvironment())) {
-                    fireChanged(key, value);
+                    process(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ZONE)) {
                 if (contribMatcher.match(tagValue, pluginAdapter.getZone())) {
-                    fireChanged(key, value);
+                    process(key, value);
                 }
             } else if (StringUtils.equals(tagKey, ContribConstant.ADDRESS)) {
                 if (contribMatcher.matchAddress(tagValue)) {
-                    fireChanged(key, value);
+                    process(key, value);
                 }
             }
         }
     }
 
-    public void fireChanged(String key, String value) {
-        if (CollectionUtils.isEmpty(contribSubscriberStrategyList)) {
+    public void process(String key, String value) {
+        if (CollectionUtils.isEmpty(contribProcessorList)) {
             return;
         }
 
@@ -144,8 +145,8 @@ public class ContribSubscriber {
 
         LOG.info("Gray release for {} with {}", key, value);
 
-        for (ContribSubscriberStrategy contribSubscriberStrategy : contribSubscriberStrategyList) {
-            contribSubscriberStrategy.fireChanged(key, value);
+        for (ContribProcessor contribProcessor : contribProcessorList) {
+            contribProcessor.process(key, value);
         }
     }
 }

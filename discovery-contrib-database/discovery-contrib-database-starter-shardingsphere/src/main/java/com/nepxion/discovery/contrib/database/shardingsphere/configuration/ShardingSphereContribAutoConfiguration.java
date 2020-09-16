@@ -13,13 +13,13 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.nepxion.discovery.contrib.database.shardingsphere.subscriber.ShardingSphereContribSubscriberStrategy;
+import com.nepxion.discovery.contrib.database.shardingsphere.processor.ShardingSphereContribProcessor;
 
 @Configuration
 public class ShardingSphereContribAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
-    public ShardingSphereContribSubscriberStrategy shardingSphereContribSubscriberStrategy() {
-        return new ShardingSphereContribSubscriberStrategy();
+    public ShardingSphereContribProcessor shardingSphereContribProcessor() {
+        return new ShardingSphereContribProcessor();
     }
 }

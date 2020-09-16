@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.subscriber;
+package com.nepxion.discovery.contrib.common.processor;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -9,6 +9,6 @@ package com.nepxion.discovery.contrib.common.subscriber;
  * @version 1.0
  */
 
-public interface ContribSubscriberStrategy {
-    void fireChanged(String key, String value);
+public interface ContribProcessor {
+    void process(String key, String value);
 }
