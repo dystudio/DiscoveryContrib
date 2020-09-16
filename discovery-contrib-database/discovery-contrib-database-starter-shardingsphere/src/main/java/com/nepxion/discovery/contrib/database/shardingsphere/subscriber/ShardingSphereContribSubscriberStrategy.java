@@ -21,6 +21,8 @@ public class ShardingSphereContribSubscriberStrategy implements ContribSubscribe
             return;
         }
 
+        System.out.println(key + "-" + value);
+        
         // 实现灰度发布切换逻辑
     }
 }

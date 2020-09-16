@@ -62,19 +62,19 @@ public class ContribSubscriber {
             Map<String, String> parameterMap = parameterServiceEntity.getParameterMap();
 
             String tagKey = parameterMap.get(ContribConstant.TAG_KEY);
-            if (StringUtils.isNotEmpty(tagKey)) {
+            if (StringUtils.isEmpty(tagKey)) {
                 throw new DiscoveryException("Tag key can be null or empty");
             }
             String tagValue = parameterMap.get(ContribConstant.TAG_VALUE);
-            if (StringUtils.isNotEmpty(tagValue)) {
+            if (StringUtils.isEmpty(tagValue)) {
                 throw new DiscoveryException("Tag value can be null or empty");
             }
             String key = parameterMap.get(ContribConstant.KEY);
-            if (StringUtils.isNotEmpty(key)) {
+            if (StringUtils.isEmpty(key)) {
                 throw new DiscoveryException("Key can be null or empty");
             }
             String value = parameterMap.get(ContribConstant.VALUE);
-            if (StringUtils.isNotEmpty(value)) {
+            if (StringUtils.isEmpty(value)) {
                 throw new DiscoveryException("Value can be null or empty");
             }
 
