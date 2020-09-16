@@ -18,9 +18,9 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class DiscoveryContribExampleService {
+public class DiscoveryContribService {
     public static void main(String[] args) {
-        new SpringApplicationBuilder(DiscoveryContribExampleService.class).run(args);
+        new SpringApplicationBuilder(DiscoveryContribService.class).run(args);
     }
 
     @Bean

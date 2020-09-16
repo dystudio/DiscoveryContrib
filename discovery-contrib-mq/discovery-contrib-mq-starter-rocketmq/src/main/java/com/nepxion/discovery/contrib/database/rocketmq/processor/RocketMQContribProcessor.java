@@ -15,6 +15,8 @@ import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
 import com.nepxion.discovery.contrib.database.rocketmq.constant.RocketMQContribConstant;
 
 public class RocketMQContribProcessor implements ContribProcessor {
+    private String destination;
+
     @Override
     public void process(String key, String value) {
         if (!StringUtils.equals(key, RocketMQContribConstant.ROCKET_MQ)) {
@@ -22,5 +24,11 @@ public class RocketMQContribProcessor implements ContribProcessor {
         }
 
         System.out.println("实现灰度发布切换逻辑 : " + key + "-" + value);
+        
+        destination = value;
+    }
+    
+    public String getDestination() {
+        return destination;
     }
 }

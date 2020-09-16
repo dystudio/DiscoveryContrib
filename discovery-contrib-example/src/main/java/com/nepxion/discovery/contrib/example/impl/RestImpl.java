@@ -9,19 +9,19 @@ package com.nepxion.discovery.contrib.example.impl;
  * @version 1.0
  */
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class RestImpl {
-    private static final Logger LOG = LoggerFactory.getLogger(RestImpl.class);
+    @Autowired
+    private RocketMQImpl rocketMQImpl;
 
     @GetMapping(path = "/rest/{value}")
     public String rest(@PathVariable(value = "value") String value) {
-        LOG.info("调用路径：{}", value);
+        rocketMQImpl.produce();
 
         return value;
     }
