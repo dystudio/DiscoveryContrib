@@ -9,6 +9,10 @@ package com.nepxion.discovery.contrib.common.adapter;
  * @version 1.0
  */
 
-public interface ContribEnabledStrategy {
-    boolean apply();
+import java.util.List;
+
+import com.nepxion.discovery.common.entity.ParameterServiceEntity;
+
+public interface ContribSubscriberStrategy {
+    boolean apply(List<ParameterServiceEntity> parameterServiceEntityList);
 }

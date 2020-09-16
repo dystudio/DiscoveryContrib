@@ -13,14 +13,13 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.nepxion.discovery.contrib.common.adapter.ContribEnabledAdapter;
-import com.nepxion.discovery.contrib.common.adapter.DefaultContribEnabledAdapter;
+import com.nepxion.discovery.contrib.common.adapter.ContribSubscriber;
 
 @Configuration
 public class ContribAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
-    public ContribEnabledAdapter contribEnabledAdapter() {
-        return new DefaultContribEnabledAdapter();
+    public ContribSubscriber contribSubscriber() {
+        return new ContribSubscriber();
     }
 }
