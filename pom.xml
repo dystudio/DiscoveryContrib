@@ -14,6 +14,7 @@
         <module>discovery-contrib-common</module>
         <module>discovery-contrib-database</module>
         <module>discovery-contrib-mq</module>
+        <module>discovery-contrib-example</module>
     </modules>
 
     <properties>
