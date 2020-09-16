@@ -11,7 +11,7 @@ package com.nepxion.discovery.contrib.database.shardingsphere.processor;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
+import com.nepxion.discovery.contrib.core.processor.ContribProcessor;
 import com.nepxion.discovery.contrib.database.shardingsphere.constant.ShardingSphereContribConstant;
 
 public class ShardingSphereContribProcessor implements ContribProcessor {

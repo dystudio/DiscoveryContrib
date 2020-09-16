@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.subscriber;
+package com.nepxion.discovery.contrib.core.subscriber;
 
 /**
  * <p>Title: Nepxion Discovery</p>
@@ -23,10 +23,10 @@ import com.google.common.eventbus.Subscribe;
 import com.nepxion.discovery.common.entity.ParameterEntity;
 import com.nepxion.discovery.common.entity.ParameterServiceEntity;
 import com.nepxion.discovery.common.exception.DiscoveryException;
-import com.nepxion.discovery.contrib.common.cache.ContribCache;
-import com.nepxion.discovery.contrib.common.constant.ContribConstant;
-import com.nepxion.discovery.contrib.common.matcher.ContribMatcher;
-import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
+import com.nepxion.discovery.contrib.core.cache.ContribCache;
+import com.nepxion.discovery.contrib.core.constant.ContribConstant;
+import com.nepxion.discovery.contrib.core.matcher.ContribMatcher;
+import com.nepxion.discovery.contrib.core.processor.ContribProcessor;
 import com.nepxion.discovery.plugin.framework.adapter.PluginAdapter;
 import com.nepxion.discovery.plugin.framework.event.ParameterChangedEvent;
 import com.nepxion.eventbus.annotation.EventBus;

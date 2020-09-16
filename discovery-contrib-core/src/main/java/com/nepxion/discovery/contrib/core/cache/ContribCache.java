@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.cache;
+package com.nepxion.discovery.contrib.core.cache;
 
 /**
  * <p>Title: Nepxion Discovery</p>

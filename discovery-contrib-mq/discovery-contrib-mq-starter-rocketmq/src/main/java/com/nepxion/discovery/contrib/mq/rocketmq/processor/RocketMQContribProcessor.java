@@ -11,7 +11,7 @@ package com.nepxion.discovery.contrib.mq.rocketmq.processor;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.nepxion.discovery.contrib.common.processor.ContribProcessor;
+import com.nepxion.discovery.contrib.core.processor.ContribProcessor;
 import com.nepxion.discovery.contrib.mq.rocketmq.constant.RocketMQContribConstant;
 
 public class RocketMQContribProcessor implements ContribProcessor {

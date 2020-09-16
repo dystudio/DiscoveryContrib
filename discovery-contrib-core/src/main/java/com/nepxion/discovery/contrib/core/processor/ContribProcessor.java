@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.processor;
+package com.nepxion.discovery.contrib.core.processor;
 
 /**
  * <p>Title: Nepxion Discovery</p>

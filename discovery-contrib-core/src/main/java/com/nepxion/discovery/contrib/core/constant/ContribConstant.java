@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.constant;
+package com.nepxion.discovery.contrib.core.constant;
 
 /**
  * <p>Title: Nepxion Discovery</p>

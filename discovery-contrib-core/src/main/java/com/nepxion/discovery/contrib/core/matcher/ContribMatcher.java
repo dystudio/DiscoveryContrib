@@ -1,4 +1,4 @@
-package com.nepxion.discovery.contrib.common.matcher;
+package com.nepxion.discovery.contrib.core.matcher;
 
 /**
  * <p>Title: Nepxion Discovery</p>
