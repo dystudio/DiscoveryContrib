@@ -21,8 +21,6 @@ public class RocketMQContribSubscriberStrategy implements ContribSubscriberStrat
             return;
         }
 
-        System.out.println(key + "=" + value);
-
-        // 实现灰度发布切换逻辑
+        System.out.println("实现灰度发布切换逻辑 : " + key + "-" + value);
     }
 }
