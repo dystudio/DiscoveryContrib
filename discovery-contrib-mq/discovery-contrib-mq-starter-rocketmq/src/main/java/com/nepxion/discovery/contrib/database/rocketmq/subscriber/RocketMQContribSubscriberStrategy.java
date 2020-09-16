@@ -9,14 +9,17 @@ package com.nepxion.discovery.contrib.database.rocketmq.subscriber;
  * @version 1.0
  */
 
-import java.util.List;
-
-import com.nepxion.discovery.common.entity.ParameterServiceEntity;
+import org.apache.commons.lang3.StringUtils;
 import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriberStrategy;
+import com.nepxion.discovery.contrib.database.rocketmq.constant.RocketMQContribConstant;
 
 public class RocketMQContribSubscriberStrategy implements ContribSubscriberStrategy {
     @Override
-    public void apply(List<ParameterServiceEntity> parameterServiceEntityList) {
+    public void apply(String key, String value) {
+        if (!StringUtils.equals(key, RocketMQContribConstant.ROCKET_MQ)) {
+            return;
+        }
 
+        // 实现灰度发布切换逻辑
     }
 }

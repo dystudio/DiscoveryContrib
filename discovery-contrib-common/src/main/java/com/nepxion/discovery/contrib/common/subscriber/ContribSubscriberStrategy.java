@@ -9,10 +9,6 @@ package com.nepxion.discovery.contrib.common.subscriber;
  * @version 1.0
  */
 
-import java.util.List;
-
-import com.nepxion.discovery.common.entity.ParameterServiceEntity;
-
 public interface ContribSubscriberStrategy {
-    void apply(List<ParameterServiceEntity> parameterServiceEntityList);
+    void apply(String key, String value);
 }

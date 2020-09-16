@@ -9,17 +9,18 @@ package com.nepxion.discovery.contrib.database.shardingsphere.subscriber;
  * @version 1.0
  */
 
-import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
-import com.nepxion.discovery.common.entity.ParameterServiceEntity;
 import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriberStrategy;
 import com.nepxion.discovery.contrib.database.shardingsphere.constant.ShardingSphereContribConstant;
 
 public class ShardingSphereContribSubscriberStrategy implements ContribSubscriberStrategy {
     @Override
-    public void apply(List<ParameterServiceEntity> parameterServiceEntityList) {
-        for (ParameterServiceEntity parameterServiceEntity : parameterServiceEntityList) {
-            parameterServiceEntity.getParameterMap().get(ShardingSphereContribConstant.SHARDING_SPHERE)
+    public void apply(String key, String value) {
+        if (!StringUtils.equals(key, ShardingSphereContribConstant.SHARDING_SPHERE)) {
+            return;
         }
+
+        // 实现灰度发布切换逻辑
     }
 }

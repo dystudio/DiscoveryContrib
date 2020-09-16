@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.nepxion.discovery.contrib.common.cache.ContribCache;
+import com.nepxion.discovery.contrib.common.subscriber.ContribMatcher;
 import com.nepxion.discovery.contrib.common.subscriber.ContribSubscriber;
 
 @Configuration
@@ -27,5 +28,11 @@ public class ContribAutoConfiguration {
     @ConditionalOnMissingBean
     public ContribSubscriber contribSubscriber() {
         return new ContribSubscriber();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public ContribMatcher contribMatcher() {
+        return new ContribMatcher();
     }
 }
