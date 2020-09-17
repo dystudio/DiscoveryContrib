@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nepxion.discovery.contrib.mq.rocketmq.processor.RocketMQContribProcessor;
+import com.nepxion.discovery.contrib.rocketmq.processor.RocketMQContribProcessor;
 
 @Service
 public class RocketMQImpl {

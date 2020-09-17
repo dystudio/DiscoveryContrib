@@ -12,8 +12,7 @@
 
     <modules>
         <module>discovery-contrib-core</module>
-        <module>discovery-contrib-database</module>
-        <module>discovery-contrib-mq</module>
+        <module>discovery-contrib-starter</module>
         <module>discovery-contrib-example</module>
     </modules>
 
@@ -34,13 +33,13 @@
 
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-database-starter-shardingsphere</artifactId>
+                <artifactId>discovery-contrib-starter-shardingsphere</artifactId>
                 <version>${project.version}</version>
             </dependency>
             
             <dependency>
                 <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-mq-starter-rocketmq</artifactId>
+                <artifactId>discovery-contrib-starter-rocketmq</artifactId>
                 <version>${project.version}</version>
             </dependency>            
 
