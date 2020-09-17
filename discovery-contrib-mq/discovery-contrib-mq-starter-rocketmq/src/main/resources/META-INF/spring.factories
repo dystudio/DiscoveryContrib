@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.nepxion.discovery.contrib.database.rocketmq.configuration.RocketMQContribAutoConfiguration
+com.nepxion.discovery.contrib.mq.rocketmq.configuration.RocketMQContribAutoConfiguration
