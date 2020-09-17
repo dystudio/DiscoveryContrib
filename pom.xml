@@ -26,24 +26,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-core</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-starter-shardingsphere</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>discovery-contrib-starter-rocketmq</artifactId>
-                <version>${project.version}</version>
-            </dependency>            
-
-            <dependency>
                 <groupId>com.nepxion</groupId>
                 <artifactId>discovery</artifactId>
                 <version>${discovery.version}</version>
