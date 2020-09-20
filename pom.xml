@@ -12,7 +12,7 @@
 
     <modules>
         <module>discovery-contrib-core</module>
-        <module>discovery-contrib-starters</module>
+        <module>discovery-contrib-starter</module>
         <module>discovery-contrib-example</module>
     </modules>
 
