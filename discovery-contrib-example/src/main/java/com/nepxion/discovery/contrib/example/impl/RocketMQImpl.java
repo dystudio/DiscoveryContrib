@@ -9,6 +9,11 @@ package com.nepxion.discovery.contrib.example.impl;
  * @version 1.0
  */
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javax.annotation.PostConstruct;
+
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
@@ -37,7 +42,7 @@ public class RocketMQImpl {
 
         rocketMQTemplate.convertAndSend(destination, message);
 
-        LOG.info("::::: RocketMQ produced, destination={}, message={}", destination, message);
+        LOG.info("发送消息 ::::: RocketMQ produced, destination={}, message={}", destination, message);
     }
 
     @Service
@@ -45,7 +50,17 @@ public class RocketMQImpl {
     public static class Subscriber1 implements RocketMQListener<String> {
         @Override
         public void onMessage(String message) {
-            LOG.info("::::: RocketMQ subscribed, destination=queue1, message={}", message);
+            LOG.info("接收消息 ::::: RocketMQ subscribed, destination=queue1, message={}", message);
         }
+    }
+
+    @PostConstruct
+    public void initialize() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                produce();
+            }
+        }, 5000L, 5000L);
     }
 }
