@@ -32,14 +32,12 @@
 
         <dependency>
             <groupId>com.nepxion</groupId>
-            <artifactId>discovery-contrib-starter-shardingsphere</artifactId>
-            <version>${project.version}</version>
+            <artifactId>discovery-contrib-plugin-starter-rocketmq</artifactId>
         </dependency>
 
         <dependency>
             <groupId>com.nepxion</groupId>
-            <artifactId>discovery-contrib-starter-rocketmq</artifactId>
-            <version>${project.version}</version>
+            <artifactId>discovery-contrib-plugin-starter-shardingsphere</artifactId>
         </dependency>
     </dependencies>
 </project>
